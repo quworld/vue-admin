@@ -13,10 +13,17 @@
 
 <script>
     import MenuTree from "./MenuTree";
+    import services from '../services';
+    const {menu} = services;
     export default {
         name: "LayoutAside",
         components:{
             MenuTree
+        },
+        mounted() {
+            menu().then(res => {
+                console.log(res);
+            });
         },
         data() {
             return {
@@ -59,11 +66,9 @@
         },
         methods: {
             handleOpen(key, keyPath) {
-                // eslint-disable-next-line no-console
                 console.log(key, keyPath);
             },
             handleClose(key, keyPath) {
-                // eslint-disable-next-line no-console
                 console.log(key, keyPath);
             }
         }
