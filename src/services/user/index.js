@@ -1,6 +1,6 @@
 export default {
     menu:{
-        method:'get',
-        url:'https://api.github.com/users'
+        method:'post',
+        url:'http://yapi.demo.qunar.com/mock/75266/menu'
     }
 }

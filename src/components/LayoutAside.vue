@@ -14,54 +14,21 @@
 <script>
     import MenuTree from "./MenuTree";
     import services from '../services';
+
     const {menu} = services;
     export default {
         name: "LayoutAside",
-        components:{
+        components: {
             MenuTree
         },
         mounted() {
             menu().then(res => {
-                console.log(res);
+                this.menuData = res.data;
             });
         },
         data() {
             return {
-                menuData: [
-                    {
-                        "id": "1",
-                        "pid": "0",
-                        "menuName": "第一级菜单 1",
-                        "children": [
-                            {
-                                "id": "2",
-                                "pid": "1",
-                                "menuName": "第二级菜单 1-1",
-                                "children": [
-                                    {
-                                        "id": "3",
-                                        "pid": "2",
-                                        "menuName": "第三级菜单 1-1-1",
-                                        "menuUrl":'page1'
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "id": "4",
-                        "pid": "0",
-                        "menuName": "第一级菜单 2",
-                        "children": [
-                            {
-                                "id": "5",
-                                "pid": "4",
-                                "menuName": "第二级菜单 2-1",
-                                "menuUrl":'page2'
-                            }
-                        ]
-                    }
-                ]
+                menuData: []
             }
         },
         methods: {
