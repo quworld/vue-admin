@@ -30,10 +30,15 @@
         methods: {
             onSubmit() {
                 console.log(this.form);
+                this.$router.push({
+                    name:'home'
+                });
                 login({
                     data:this.form
-                }).then(res => {
-                    console.log(res);
+                }).then(() => {
+                    this.$router.push({
+                        name:'home'
+                    });
                 })
             }
         }
