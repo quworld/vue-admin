@@ -1,10 +1,10 @@
 export default {
     list:{
         method:'post',
-        url:'http://yapi.demo.qunar.com/mock/75266/list'
+        url:'mock/75266/list'
     },
     save:{
         method:'post',
-        url:'http://yapi.demo.qunar.com/mock/75266/save'
+        url:'mock/75266/save'
     }
 }
