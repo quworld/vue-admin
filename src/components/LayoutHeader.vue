@@ -11,7 +11,7 @@
         methods:{
             onLogout(){
                 console.log('logout');
-                sessionStorage.removeItem('auth');
+                sessionStorage.removeItem('Authorization');
             }
         }
     }

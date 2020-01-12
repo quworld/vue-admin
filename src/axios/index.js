@@ -6,8 +6,8 @@ axios.interceptors.request.use(function (config) {
     if(method === "post") {
         config.data = qs.stringify(config.data);
         config.headers['Content-Type'] = 'application/x-www-form-urlencoded';
-        if(localStorage.getItem('auth')){
-            config.headers['auth'] = localStorage.getItem('auth');
+        if(localStorage.getItem('Authorization')){
+            config.headers['Authorization'] = localStorage.getItem('Authorization');
         }
     }
     return config;
