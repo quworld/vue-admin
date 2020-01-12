@@ -34,8 +34,11 @@
                     name:'home'
                 });
                 login({
+                    headers:{"auth":"askdjqwkeuqwioeuqwe"},
                     data:this.form
-                }).then(() => {
+                }).then((res) => {
+                    console.log(res);
+                    localStorage.setItem('auth','xxxxxx');
                     this.$router.push({
                         name:'home'
                     });
