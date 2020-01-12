@@ -1,7 +1,7 @@
 export default {
     menu:{
         method:'post',
-        url:'mock/75266/menu'
+        url:'/menu'
     },
     login:{
         method:'post',
