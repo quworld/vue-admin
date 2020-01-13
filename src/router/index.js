@@ -16,9 +16,9 @@ const routes = [
         component:() => import('../views/User')
       },
       {
-        path:'page2',
-        name:'page2',
-        component:() => import('../views/Page2')
+        path:'fix',
+        name:'fix',
+        component:() => import('../views/Fix')
       }
     ]
   },
