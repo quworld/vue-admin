@@ -1,14 +1,18 @@
 export default {
-    menu:{
-        method:'post',
-        url:'/menu'
+    menu: {
+        method: 'get',
+        url: '/menu'
     },
-    login:{
-        method:'post',
-        url:'/login'
+    login: {
+        method: 'post',
+        url: '/login'
     },
-    logout:{
-        method:'post',
-        url:'/logout'
+    logout: {
+        method: 'post',
+        url: '/logout'
+    },
+    userList: {
+        method: 'get',
+        url: '/page/users'
     }
 }

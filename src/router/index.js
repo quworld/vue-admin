@@ -11,9 +11,9 @@ const routes = [
     component: Home,
     children:[
       {
-        path:'page1',
-        name:'page1',
-        component:() => import('../views/Page1')
+        path:'user',
+        name:'user',
+        component:() => import('../views/User')
       },
       {
         path:'page2',
