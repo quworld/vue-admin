@@ -14,5 +14,9 @@ export default {
     userList: {
         method: 'get',
         url: '/page/users'
+    },
+    userSave: {
+        method: 'post',
+        url: '/users'
     }
 }

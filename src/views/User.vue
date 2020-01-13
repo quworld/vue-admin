@@ -23,37 +23,14 @@
         </el-pagination>
         <el-dialog title="添加" :visible.sync="dialogVisible">
             <el-form :model="form" label-position="right">
-                <el-form-item label="库" :label-width="formLabelWidth">
-                    <el-select v-model="form.store" placeholder="请选择">
-                        <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
-                    </el-select>
+                <el-form-item label="user_name" :label-width="formLabelWidth">
+                    <el-input v-model="form.user_name" />
                 </el-form-item>
-                <el-form-item label="表" :label-width="formLabelWidth">
-                    <el-select v-model="form.table" placeholder="请选择">
-                        <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
-                    </el-select>
+                <el-form-item label="login_name" :label-width="formLabelWidth">
+                    <el-input v-model="form.login_name" />
                 </el-form-item>
-                <div class="form-dynamic" v-for="(property, index) in form.property" :key="property.id">
-                    <div class="title">属性{{ index + 1 }}</div>
-                    <el-form-item
-                            class="item"
-                            :prop="'property.' + index + '.key'">
-                        <el-select v-model="property.key" placeholder="请选择">
-                            <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
-                        </el-select>
-                    </el-form-item>
-                    <el-form-item
-                            class="item"
-                            :prop="'property.' + index + '.value'">
-                        <el-input v-model="property.value" />
-                    </el-form-item>
-                    <div class="btn">
-                        <el-button @click.prevent="add(property)">添 加</el-button>
-                        <el-button v-if="form.property.length > 1" @click.prevent="remove(property)">删 除</el-button>
-                    </div>
-                </div>
-                <el-form-item label="条件" :label-width="formLabelWidth">
-                    <el-input v-model="form.condition" />
+                <el-form-item label="password" :label-width="formLabelWidth">
+                    <el-input v-model="form.password" />
                 </el-form-item>
             </el-form>
             <div slot="footer" class="dialog-footer">
@@ -66,7 +43,7 @@
 
 <script>
     import services from '../services';
-    const {userList, save} = services;
+    const {userList, userSave} = services;
     export default {
         name: "User",
         mounted() {
@@ -103,14 +80,9 @@
                 tableData: [],
                 dialogVisible:false,
                 form:{
-                    store:'',
-                    table:'',
-                    property:[{
-                        id:+Date.now(),
-                        key:'',
-                        value:''
-                    }],
-                    condition:''
+                    user_name:'',
+                    login_name:'',
+                    password:''
                 },
                 formLabelWidth:'80px',
                 options:[{
@@ -149,7 +121,7 @@
                 });
             },
             onSave(){
-                save({data:this.form}).then(res => {
+                userSave({data:this.form}).then(res => {
                     console.log(this.form);
                     console.log(res);
                     this.dialogVisible = false;
