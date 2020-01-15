@@ -38,7 +38,7 @@
                     data: this.form
                 }).then((res) => {
                     console.log(res);
-                    localStorage.setItem('Authorization', ' basic ' + res.token);
+                    sessionStorage.setItem('Authorization', ' basic ' + res.token);
                     this.$router.push({
                         name: 'home'
                     });

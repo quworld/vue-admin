@@ -1,7 +1,7 @@
 <template>
     <div class="layout-header">
-        Header
-        <div @click="onLogout">logout</div>
+        <div class="title">vue admin</div>
+        <div class="logout" @click="onLogout">logout</div>
     </div>
 </template>
 
@@ -18,5 +18,12 @@
 </script>
 
 <style scoped lang="less">
-
+    .layout-header{
+        display: flex;
+        justify-content: space-between;
+        line-height: 60px;
+        .logout{
+            cursor: pointer;
+        }
+    }
 </style>

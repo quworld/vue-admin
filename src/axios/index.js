@@ -2,8 +2,8 @@ import axios from 'axios';
 //添加一个请求拦截器
 axios.interceptors.request.use(function (config) {
     const {method} = config;
-    if(localStorage.getItem('Authorization')){
-        config.headers['Authorization'] = localStorage.getItem('Authorization');
+    if(sessionStorage.getItem('Authorization')){
+        config.headers['Authorization'] = sessionStorage.getItem('Authorization');
     }
     if(method === "post") {
         config.headers['Content-Type'] = 'application/json';
